@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slot Machine Project</title>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+	<div class="container jcCenter">
+		<h1>Welcome to slot machine</h1>
+		<div class="slotContainer dFlex jcCenter aiCenter" id="slotsContainer">
+			<div class="slotSquare dFlex aiCenter jcCenter">
+				<img id="spinBox1" class="img" src="assets/img/aguacate.png">
+			</div>
+			<div class="slotSquare dFlex aiCenter jcCenter">
+				<img id="spinBox2" class="img" src="assets/img/ajo.png">
+			</div>
+			<div class="slotSquare dFlex aiCenter jcCenter">
+				<img id="spinBox3" class="img" src="assets/img/tomate.png">
+			</div>
+		</div>
+		<h1 class="m-15"><span id="spinResult"></span></h1>
+		<div class="dFlex jcCenter aiCenter col-12" id="controllers">
+			<label class="m-15">Coins: <span id="remainingCoins">0</span></label>
+			<button id="throwButton" type="button" class="btn btn-danger btn-lg m-15" onclick="performThrow();">Throw</button>
+			<button id="exitButton" type="button" class="btn btn-danger btn-lg m-15" 
+			onclick="document.getElementById('coinsHistoryDialog').style.visibility='visible';">Exit</button>
+		</div>
+
+		<!-- <p class="ta-center"><b>You can win money by following the prizes</b><br>
+			If a carrot comes out, a coin is won.<br>
+			If two carrots come out, four coins are won.<br>
+			If two identical vegetables other than carrots come out, two coins are won.<br>
+			If three carrots come out, you win ten coins.<br>
+			If you get three identical vegetables other than carrots, you win five coins.<br>
+			If you get one carrot and two identical vegetables, you win three coins.<br>
+		</p> -->
+		<div class="dFlex jcCenter aiCenter col-12" id="controllers">
+			<!-- <label><img src="assets/img/zanahoria.png"> + ? + <img src="assets/img/zanahoria.png"> = </label> -->
+		</div>
+	</div>
+
+	<!-- DELIVERY DETAILS DIALOG BOX -->
+	<div class="popup" id="introduceCoinsDialog">
+		<input class="textField" type="number" min="1" name="coinsTextField" id="coinsTextField" placeholder="Please select number of coins" required>
+		<input class="btn btn-danger btn-lg w-200" type="button" name="introduceCoinsButton" id="introduceCoinsButton" value="Introduce Coins"
+				onclick="toggleDialogVisibility('introduceCoinsDialog');">
+	</div>
+
+	<!-- DELIVERY DETAILS DIALOG BOX -->
+	<div class="popup" id="coinsHistoryDialog" style="visibility: hidden;">
+		<h3>You won:</h3>
+		<label id="history">
+
+			<!-- You won: <span>0</span> coins <br>
+			You lost: <span>0</span> coins <br> -->
+		</label>
+		<br>
+		<br>
+		<p class="ta-center"><b>You can win money by following the prizes</b><br>
+			If a carrot comes out, a coin is won.<br>
+			If two carrots come out, four coins are won.<br>
+			If two identical vegetables other than carrots come out, two coins are won.<br>
+			If three carrots come out, you win ten coins.<br>
+			If you get three identical vegetables other than carrots, you win five coins.<br>
+			If you get one carrot and two identical vegetables, you win three coins.<br>
+		</p>
+		<input class="btn btn-danger btn-lg w-200" type="button" name="introduceCoinsButton" id="introduceCoinsButton" value="Dismiss"
+				onclick="document.getElementById('coinsHistoryDialog').style.visibility='hidden';">
+	</div>
+
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>
